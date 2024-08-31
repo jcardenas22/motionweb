@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --color_text-primary: rgb(56, 103, 56);
+  --color_text-secundry: #ff9837;
+  --color_text-tercero: rgb(12, 18, 29);
+  --main_color-primary: rgba(204, 227, 192, 0.941);
+  --background-color: #fafbfe;
+  --text_size_title: 40px;
+  --lowtext_font_size: 16px;
+  --text_title_card: 24px;
+  --text_title_cardv2: 20px;
+  --text_parrafo: 16px;
+  --box_shadow-primary: 0px 6px 50px -20px rgba(0, 0, 0, 0.2);
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  z-index: 100;
+}
+
+.container__header {
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+  display: flex; /* se uso para que se separen todo el contenido */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  margin-top: 14px;
+}
+
+.logo img {
+  width: 250px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu nav {
+  margin: 0px 10px;
+}
+
+.menu nav ul {
+  display: flex;
+}
+
+.menu nav ul li {
+  list-style: none;
+  margin: 20px 15px;
+}
+
+.menu nav ul li a {
+  color: var(--color_text-tercero);
+  font-size: 18px;
+  position: relative;
+  text-transform: uppercase; /* todo el texto se vuelve en mayuscula*/
+}
+
+.menu nav ul li a:hover {
+  color: green; /*variable*/
+}
+
+.btn__quote {
+  display: block;
+  background: var(--color_text-primary);
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 500;
+  margin: 0px 10px;
+  color: rgb(255, 254, 254);
+  text-transform: uppercase; /* todo el texto se vuelve en mayuscula*/
+  font-size: 17px;
+  transition: all 300ms;
+}
+
+.btn__quote:hover {
+  background: transparent;
+  border: 2px solid var(--color_text-primary);
+  color: var(--color_text-primary);
+}
+
+.menu .socialmedia {
+  margin: 0px 10px;
+}
+
+.menu .socialmedia a {
+  margin: 0px 4px;
+}
+
+.menu .socialmedia img {
+  width: 20px;
+}
+
+/*empezamos el main*/
+
+.container__cover {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: var(--main_color-primary);
+}
+
+.cover {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.text__cover {
+  width: 100%;
+  padding-right: 150px;
+}
+
+.text__cover h1 {
+  font-size: 50px;
+  color: var(--color_text-tercero);
+}
+
+.text__cover p {
+  font-size: var(--text_parrafo);
+  margin-top: 40px;
+  color: rgb(87, 86, 86);
+}
+
+.btn__text {
+  display: block;
+  width: 150px;
+  margin-top: 40px;
+  padding: 10px 20px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: var(--color_text-primary);
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.btn__text:hover {
+  background: transparent;
+  border: 2px solid var(--color_text-primary);
+  color: var(--color_text-primary);
+}
+
+.image__cover {
+  width: 100%;
+}
+.image__cover img {
+  width: 600px;
+}
+
+/*estilos generales CARDS*/
+
+.container__card-primary {
+  padding: 100px;
+}
+
+.card__primary {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  padding: 0px 20px;
+}
+
+.text__card-primary {
+  max-width: 800px;
+  margin: auto;
+}
+
+.text__card-primary p {
+  color: var(--color_text-primary);
+  letter-spacing: 4px; /*para el texto tenga una sepracion en las letras */
+  font-size: var(--text_parrafo);
+  font-weight: 500;
+}
+
+.text__card-primary h1 {
+  font-size: var(--text_size_title);
+  font-weight: 600;
+  color: var(--color_text-tercero);
+}
+
+.container__box-cardPrimary {
+  display: flex;
+  flex: wrap; /*se usa con los 2 estilos de abajo , para que los cuadros o contendores mantenga aun aposicion si la pantala es grande o pequeña*/
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* .box__card-primary {
+  max-width: 350px;
+  padding: 60px 40px;
+  border: 1px solid #e6e6e6;
+  border-radius: 20px;
+  margin: 14px;
+} */
+
+.box__card-primary {
+  max-width: 350px;
+  padding: 60px 40px;
+}
+
+.container__trust img {
+  width: 80px;
+}
