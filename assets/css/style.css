@@ -201,7 +201,7 @@ main {
   filter: blur(2px);
 }
 
-.container__card-primary {
+.container__trustt .container__card-primary {
   margin-top: 20px;
 }
 
@@ -222,7 +222,6 @@ main {
   letter-spacing: 4px; /*para el texto tenga una sepracion en las letras */
   font-size: var(--text_parrafo);
   font-weight: 800;
-  margin-top: 80px;
 }
 
 .text__card-primary h1 {
@@ -292,6 +291,9 @@ main {
 
 /*empiza comunidad */
 
+.container_about {
+  margin: 20px;
+}
 .image__about {
   display: flex; /* Utiliza Flexbox para alinear la imagen y centrarla */
   justify-content: center; /* Centra la imagen horizontalmente dentro del contenedor */
@@ -314,9 +316,17 @@ main {
 
 .container__trustt {
   background: rgb(228, 236, 236);
-  height: auto;
   width: 100%;
   padding: 20px;
+}
+
+.container__trustt_dreams {
+  background-image: url("https://cdn.pixabay.com/photo/2016/05/05/02/40/jetty-1373173_960_720.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  padding: 40px 0px 40px 0px;
 }
 
 .container__card-primero {
