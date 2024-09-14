@@ -22,10 +22,21 @@
 }
 
 header {
+  background-color: transparent;
   width: 100%;
-  height: 100px;
-  position: fixed;
-  z-index: 100;
+  height: 80px;
+  position: fixed; /* se uso para que todo el header que es el menu se mantenga al desplazar hacia abajo*/
+  z-index: 1000;
+}
+
+header.scrolled {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Fondo con opacidad que se ajusta cuando se hace scroll */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más prominente para mejorar la visibilidad */
 }
 
 .container__header {
@@ -70,7 +81,7 @@ header {
 
 .menu nav ul li a {
   color: var(--color_text-tercero);
-  font-size: 18px;
+  font-size: 16px;
   position: relative;
   text-transform: uppercase; /* todo el texto se vuelve en mayuscula*/
 }
@@ -110,7 +121,13 @@ header {
   width: 20px;
 }
 
-/*empezamos el main*/
+/* estilos main */
+
+main {
+  width: 100%;
+  height: 100%;
+}
+/*empezamos el portad inicio */
 
 .container__cover {
   padding-top: 100px;
@@ -172,9 +189,20 @@ header {
 }
 
 /*estilos generales CARDS*/
+.background__blur {
+  width: 100%;
+  height: 120vh;
+  position: absolute;
+  background-image: url("https://cdn.pixabay.com/photo/2016/05/05/02/40/jetty-1373173_960_720.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transition: all 300ms;
+  filter: blur(2px);
+}
 
 .container__card-primary {
-  padding: 100px;
+  margin-top: 20px;
 }
 
 .card__primary {
@@ -190,16 +218,27 @@ header {
 }
 
 .text__card-primary p {
-  color: var(--color_text-primary);
+  color: white;
   letter-spacing: 4px; /*para el texto tenga una sepracion en las letras */
   font-size: var(--text_parrafo);
-  font-weight: 500;
+  font-weight: 800;
+  margin-top: 80px;
 }
 
 .text__card-primary h1 {
   font-size: var(--text_size_title);
   font-weight: 600;
   color: var(--color_text-tercero);
+}
+
+.box__card-primary h2 {
+  margin-top: 20px;
+  font-size: var(--text_title_card);
+  font-weight: 500;
+}
+
+.box__card-primary p {
+  margin-top: 20px;
 }
 
 .container__box-cardPrimary {
@@ -210,18 +249,235 @@ header {
 }
 
 .box__card-primary {
-  max-width: 350px;
+  width: 350px;
   padding: 60px 40px;
   border: 1px solid #e6e6e6;
+  background-color: #f8f5f5; /* Blanco puro para la caja */
   border-radius: 20px;
   margin: 14px;
+  transition: all 300ms;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+}
+.box__card-primary:hover {
+  border: 8px solid transparent;
+  background-color: #ffff;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4); /* Sombra más intensa al pasar el cursor */
 }
 
-.box__card-primary {
-  max-width: 350px;
-  padding: 60px 40px;
+.btn__go {
+  display: inline-block;
+  width: 150px;
+  margin-top: 50px;
+  padding: 15px 20px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: var(--color_text-primary);
+  cursor: pointer;
+  transition: all 300ms;
+  font-size: 16px;
 }
 
-.container__trust img {
+.btn__go:hover {
+  background: transparent;
+  border: 2px solid var(--color_text-primary);
+  color: var(--color_text-primary);
+}
+
+.card__trust img {
   width: 80px;
+}
+
+/*empiza comunidad */
+
+.image__about {
+  display: flex; /* Utiliza Flexbox para alinear la imagen y centrarla */
+  justify-content: center; /* Centra la imagen horizontalmente dentro del contenedor */
+  align-items: center; /* Centra la imagen verticalmente dentro del contenedor, si es necesario */
+  margin: auto; /* Centra el contenedor en su contenedor padre */
+  margin-top: 130px; /* Espacio superior */
+  position: relative; /* Contexto de posicionamiento para los elementos hijos */
+  padding: 3% 3%; /* Espacio a los lados */
+}
+
+.styled-image {
+  display: block; /* Asegura que la imagen se comporte como un bloque */
+  width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+  height: auto; /* Mantiene la proporción original de la imagen */
+  border-radius: 15px; /* Bordes redondeados con un radio de 15px */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para darle un efecto de relieve */
+}
+
+/*modalidades*/
+
+.container__trustt {
+  background: rgb(228, 236, 236);
+  height: auto;
+  width: 100%;
+  padding: 20px;
+}
+
+.container__card-primero {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.card__primero {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  padding: 0px 20px;
+}
+
+.text__card-primero {
+  max-width: 800px;
+  margin: auto;
+}
+
+.text__card-primero p {
+  color: var(--color_text-primary);
+  letter-spacing: 4px; /*para el texto tenga una sepracion en las letras */
+  font-size: var(--text_parrafo);
+  font-weight: 800;
+  margin-top: 100px;
+}
+
+.text__card-primero h1 {
+  margin-top: 20px;
+  font-size: var(--text_size_title);
+  font-weight: 600;
+  color: var(--color_text-tercero);
+}
+
+.container__box-cardPrimero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.box__card-primero {
+  border-radius: 20px;
+  margin: 5px;
+  transition: all 300ms;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+}
+
+.box__card-primero:hover {
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.589); /* Sombra más intensa al pasar el cursor */
+}
+
+.card__trustt {
+  position: relative; /* Crea un contexto de posicionamiento para los elementos hijos */
+  overflow: hidden; /* Oculta el contenido que se desborde del contenedor */
+}
+.card-image {
+  width: 250px; /* Ajusta la imagen para que ocupe todo el contenedor */
+
+  height: auto; /* Ajusta la altura de la imagen para que ocupe todo el contenedor */
+  object-fit: cover; /* Mantiene la imagen con aspecto de cobertura */
+}
+
+.card-title-container {
+  position: absolute; /* Posiciona el contenedor del título absolutamente dentro del contenedor */
+  bottom: 0; /* Coloca el contenedor del título en la parte inferior */
+  left: 0; /* Alinea el contenedor del título al borde izquierdo */
+  width: 100%; /* Hace que el contenedor del título ocupe todo el ancho del contenedor */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fondo semitransparente para el contenedor del título */
+}
+.card-title {
+  margin: 0; /* Elimina el margen por defecto del <h2> */
+  padding: 10px; /* Espaciado interno alrededor del texto */
+  color: white; /* Color del texto */
+  font-size: 24px; /* Tamaño del texto */
+  text-align: center; /* Centra el texto dentro del elemento */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Añade un efecto de relieve al texto */
+  box-sizing: border-box; /* Incluye el padding y el border en el cálculo del ancho */
+}
+
+/*CARRUSEL */
+
+/* Estilos generales del carrusel */
+.carousel {
+  margin-top: 40px;
+  position: relative;
+  max-width: 100%; /* Ajusta el ancho máximo del carrusel al contenedor padre */
+  margin: auto; /* Centra el carrusel horizontalmente */
+  border-radius: 10px; /* Bordes redondeados para el carrusel */
+  overflow: hidden; /* Oculta cualquier parte de las imágenes que sobresalga del contenedor */
+}
+
+/* Estilos de las imágenes del carrusel */
+
+.container__text {
+  text-align: center;
+}
+
+/* app */
+.container__coved {
+  background: rgb(239, 239, 239);
+}
+
+.coved {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.text__coved {
+  margin-top: 220px;
+  width: 100%;
+  padding-right: 150px;
+  display: flex;
+  flex-direction: column; /* Cambia a columna para apilar elementos */
+  align-items: flex-start; /* Alinea los elementos a la izquierda */
+}
+
+.text__cover h1 {
+  font-size: 35px;
+  color: var(--color_text-tercero);
+  margin-bottom: 10px;
+}
+
+.text__cover p {
+  font-size: var(--text_parrafo);
+  margin-top: 20px;
+  color: rgb(87, 86, 86);
+}
+
+.btn__text {
+  display: block;
+  width: 150px;
+  padding: 10px 20px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: var(--color_text-primary);
+  cursor: pointer;
+  transition: all 300ms;
+  margin-right: 10px; /* Reduce el espacio entre el botón y la imagen */
+}
+
+.btn__text:hover {
+  background: transparent;
+  border: 2px solid var(--color_text-primary);
+  color: var(--color_text-primary);
+}
+.image__coved img {
+  width: 500px;
 }
